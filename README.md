@@ -1,4 +1,4 @@
-docker-containers
+docker-images
 =================
 
-Docker containers, mostly a work in progress
+Docker images, mostly a work in progress
