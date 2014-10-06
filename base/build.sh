@@ -6,4 +6,4 @@ set -e
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 cd $DIR
 
-docker build --force-rm -t zanconsulting/base:0.0.1 .
+docker build --force-rm -t zanconsulting/base:1.0.0 .
