@@ -24,9 +24,12 @@ RUN apt-get update \
 
 # Set up standard SSH key
 ADD id_zan_docker.pub /tmp/id_zan_docker.pub
-RUN mkdir -p /root/.ssh \
+RUN echo "[+++++ Adding SSH key +++++]" \
+    && rm -f /etc/service/sshd/down \
+    && mkdir -p /root/.ssh \
     && cat /tmp/id_zan_docker.pub >> /root/.ssh/authorized_keys \
-    && chmod 600 /root/.ssh/authorized_keys
+    && chmod 600 /root/.ssh/authorized_keys \
+    && echo "[+++++ SSH key added +++++]" \
 
 
 # Expose ports
