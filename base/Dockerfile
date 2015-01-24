@@ -29,7 +29,7 @@ RUN echo "[+++++ Adding SSH key +++++]" \
     && mkdir -p /root/.ssh \
     && cat /tmp/id_zan_docker.pub >> /root/.ssh/authorized_keys \
     && chmod 600 /root/.ssh/authorized_keys \
-    && echo "[+++++ SSH key added +++++]" \
+    && echo "[+++++ SSH key added +++++]"
 
 
 # Expose ports
