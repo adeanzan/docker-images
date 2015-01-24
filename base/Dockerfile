@@ -1,8 +1,8 @@
 # Base image for all Zan images
 # zanconsulting/base
 
-# release date: 2014-10-03
-FROM phusion/baseimage:0.9.15
+# release date: 2015-01-20
+FROM phusion/baseimage:0.9.16
 
 # Configure APT to run without a terminal
 ENV DEBIAN_FRONTEND noninteractive
