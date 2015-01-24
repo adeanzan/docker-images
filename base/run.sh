@@ -6,4 +6,4 @@ set -e
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 cd $DIR
 
-docker run --rm -P zanconsulting/base &
+docker run --rm -P zanconsulting/base:dev
