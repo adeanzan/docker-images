@@ -1,4 +1,6 @@
-# Base image for all Zan images
+#
+# Common container settings for all Zan images
+#
 # zanconsulting/base
 
 # release date: 2015-01-20
@@ -13,24 +15,12 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # Update system and run basic configuration
-RUN apt-get update \
+RUN echo "[+++++ Start: installing basic packages +++++]" \  
+    && apt-get update \
     && apt-get upgrade -y \
     && locale-gen en_US.UTF-8 \
     && apt-get install -y \
         software-properties-common \
-        python-software-properties 
+        python-software-properties \
+    && echo "[+++++ End  : installing basic packages +++++]" 
     
-
-
-# Set up standard SSH key
-ADD id_zan_docker.pub /tmp/id_zan_docker.pub
-RUN echo "[+++++ Adding SSH key +++++]" \
-    && rm -f /etc/service/sshd/down \
-    && mkdir -p /root/.ssh \
-    && cat /tmp/id_zan_docker.pub >> /root/.ssh/authorized_keys \
-    && chmod 600 /root/.ssh/authorized_keys \
-    && echo "[+++++ SSH key added +++++]"
-
-
-# Expose ports
-EXPOSE 22

@@ -6,7 +6,7 @@ set -e
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 cd $DIR
 
-VERSION="1.0.4"
+VERSION="1.1.0"
 
 docker tag -f zanconsulting/base:dev zanconsulting/base:latest
 docker tag -f zanconsulting/base:dev zanconsulting/base:"${VERSION}"
