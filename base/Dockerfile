@@ -15,12 +15,13 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # Update system and run basic configuration
-RUN echo "[+++++ Start: installing basic packages +++++]" \  
+RUN echo "[+++++ Start: installing basic packages +++++]" \
     && apt-get update \
     && apt-get upgrade -y \
     && locale-gen en_US.UTF-8 \
     && apt-get install -y \
-        software-properties-common \
+        apt-transport-https \
+        ca-certificates \
         python-software-properties \
-    && echo "[+++++ End  : installing basic packages +++++]" 
-    
+        software-properties-common \
+    && echo "[+++++ End  : installing basic packages +++++]"
