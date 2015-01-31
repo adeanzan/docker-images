@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# note: do not need /sbin/setuser since haproxy drops
+# privileges itself
+exec haproxy -f /etc/haproxy/haproxy.conf

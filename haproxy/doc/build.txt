@@ -1,0 +1,3 @@
+
+curl -O http://www.haproxy.org/download/1.5/src/haproxy-1.5.10.tar.gz
+make TARGET=linux2628 USE_PCRE=1 USE_OPENSSL=1 USE_ZLIB=1
