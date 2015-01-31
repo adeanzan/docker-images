@@ -1,0 +1,26 @@
+zan-container-cluster.yml
+
+services:
+    consul:
+        priority: 50
+        started_when:
+            - http_request_okk:
+                url: /v1/agent/self
+
+        containers:
+            zan-consul:
+                image: zanconsulting/consul:latest
+                environment:
+                    DATACENTER: personal
+                    BOOTSTRAP_EXPECT: 1 
+                volumes:
+                    - /var/zan/container-cluster/storage/consul:/var/consul                   
+
+    logging:    
+        priority: 100
+        containers:
+            zan-graylog:
+                image: zanconsulting/graylog:latest
+                volumes:
+                    - /var/zan/container-cluster/storage/logging:/var/whatever/graylog-needs
+
